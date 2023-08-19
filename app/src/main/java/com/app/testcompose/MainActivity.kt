@@ -4,15 +4,16 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Info
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import com.app.testcompose.ui.theme.TestComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,9 +32,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
-    Column {
+    Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally) {
         val context = LocalContext.current
-
         Text(text = "Hello")
         Text(text = "World")
         Button(onClick = {
