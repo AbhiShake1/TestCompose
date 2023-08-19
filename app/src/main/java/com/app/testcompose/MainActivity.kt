@@ -36,10 +36,10 @@ fun Greeting() {
         val context = LocalContext.current
         Text(text = "Hello")
         Text(text = "World")
-        Button(onClick = {
-            Toast.makeText(context, "Info button pressed", Toast.LENGTH_SHORT).show()
-        }) {
-            Icon(Icons.Filled.Info, contentDescription = "Info")
-        }
+        ExtendedFloatingActionButton(
+            onClick = { Toast.makeText(context, "Info button pressed", Toast.LENGTH_SHORT).show() },
+            icon = { Icon(Icons.Filled.Info, contentDescription = "Info") },
+            text = { Text(text = "Info") }
+        )
     }
 }
