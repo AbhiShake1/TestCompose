@@ -3,6 +3,7 @@ package com.app.testcompose
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
@@ -19,9 +20,17 @@ class MainActivity : ComponentActivity() {
             TestComposeTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Text(text = "Hello world")
+                    Greeting()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun Greeting() {
+    Column() {
+        Text(text = "Hello")
+        Text(text = "World")
     }
 }
